@@ -13,7 +13,7 @@ data class Person(
     val surname: String,
 )
 
-fun Person.getFullName(): String = "$name $surname"
+// fun Person.getFullName(): String = "$name $surname"
 
 // Так как у функции есть префикс в виде класса, который мы расширяем, в самой функции мы получаем полный доступ к его
 // public свойствам.
@@ -64,7 +64,7 @@ val Person.fullname
 // Ссылки
 // Мы также можем использовать function type (тип функции) для описания нашей функции расширения, ведь она обычная
 // функция. Мы знаем, во что данная функция превратится после компиляции:
-fun getFullName(p: Person): String = "${p.name} ${p.surname}"
+// fun getFullName(p: Person): String = "${p.name} ${p.surname}"
 // @NotNull
 // public String getFullName(@NotNull Person $this$getFullName) {
 //   Intrinsics.checkNotNullParameter($this$getFullName, "<this>");
@@ -72,5 +72,5 @@ fun getFullName(p: Person): String = "${p.name} ${p.surname}"
 // }
 
 // А значит мы можем догадаться о том, как будет выглядеть наш function type:
-val fullName: (Person) -> String = Person::getFullName
+// val fullName: (Person) -> String = Person::getFullName
 // Это нужно для случаев, когда нам необходимо передать функцию как аргумент другой функции
