@@ -383,20 +383,22 @@ class Solution {
 
     //https://leetcode.com/problems/majority-element/description/
     fun majorityElement(nums: IntArray): Int {
-        if (nums.isEmpty()) return 0
         val map = mutableMapOf<Int, Int>()
-        var key: Int? = null
-        var value: Int? = null
-        var max = 0
-        var result = 0;
         for (num in nums) {
             map[num] = map.getOrDefault(num, 0) + 1
-            key = map[num]
-            value = map[key]
-            if (max <= value) {
-                max = value
-                result = max
+        }
+
+        var majorityElement = Int.MIN_VALUE
+        var maxValue = Int.MIN_VALUE
+        for (entry in map) {
+            val value = entry.value
+            val key = entry.key
+            if (maxValue < value) {
+                maxValue = value
+                majorityElement = key
             }
         }
+
+        return majorityElement
     }
 }
