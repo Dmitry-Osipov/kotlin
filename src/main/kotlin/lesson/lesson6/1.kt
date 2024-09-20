@@ -9,7 +9,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
-import lesson.lesson2.User
 
 fun main() {
     // Корутина — это не отдельный поток. Её можно рассматривать как задачу или даже просто функцию, которая может
